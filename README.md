@@ -9,3 +9,6 @@ Filename includes module name, target processor and version.
 - 2023/12/11 - Added ATTiny85 and ATTiny25-based firmware
 - 2024/03/10 - updated all MIDI modules with improved state machine (note on/off processing was faulty in the case of running status).
 - 2024/03/23 - Version 1.3.0 of mb/1 — improved system-exclusive handling and other small improvements
+- 2024/03/24 - Added hacky script to program UPDI devices.
+  - Usage: "python3 prog.py <hex-name> <serial-port>" where hex name is one of the files in this directory and serial port is where your updi-programmer is attached. Only 'tested' on MacOS.
+  - Needs the arduino 'MegaTinyCore' package installed.
