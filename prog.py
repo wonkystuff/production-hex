@@ -18,7 +18,6 @@ device = parts[1].lower()
 subprocess.call(
     [
         "avrdude",
-        "-v",
         "-p",
         device,
         "-c",
