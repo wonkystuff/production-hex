@@ -15,17 +15,14 @@ home_dir = os.path.expanduser("~")
 progpy = glob.glob(
     os.path.join(home_dir, "Library", "Arduino15", "**/prog.py"), recursive=True
 )[0]
-avrdude = "/opt/homebrew/bin/avrdude"
 
 # Use avrdude if it's installed (v7.0 or more supports serialupdi):
 subprocess.call(
     [
-        avrdude,
+        "avrdude",
         "-v",
         "-p",
         device,
-        "-C",
-        "/Users/namke/.platformio/packages/tool-avrdude/avrdude.conf",
         "-c",
         "serialupdi",
         "-b",
