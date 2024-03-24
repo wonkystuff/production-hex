@@ -7,34 +7,54 @@ hex_file = sys.argv[1]
 serialPort = sys.argv[2]
 
 parts = hex_file.split(".")[0].split("_")
+print(parts)
+
 device = parts[1].lower()
-
 home_dir = os.path.expanduser("~")
-progpy = glob.glob(os.path.join(home_dir, "Library", "Arduino15", "**/prog.py"), recursive=True)[0]
 
+progpy = glob.glob(
+    os.path.join(home_dir, "Library", "Arduino15", "**/prog.py"), recursive=True
+)[0]
+avrdude = "/opt/homebrew/bin/avrdude"
+
+# Use avrdude if it's installed (v7.0 or more supports serialupdi):
 subprocess.call(
     [
-        "python3",
-        "-u",
-        progpy,
-        "-t",
-        "uart",
-        "-u",
-        serialPort,
+        avrdude,
+        "-v",
+        "-p",
+        device,
+        "-C",
+        "/Users/namke/.platformio/packages/tool-avrdude/avrdude.conf",
+        "-c",
+        "serialupdi",
         "-b",
         "57600",
-        "-d",
-        device,
-        "--fuses",
-        "0:0x00",
-        "2:0x00",
-        "6:0x00",
-        "7:0x00",
-        "8:0x00",
-        "-f",
-        hex_file,
-        "-a",
-        "write",
-        "-v",
+        "-P",
+        serialPort,
+        "-U",
+        "flash:w:"+hex_file+":i",
     ]
 )
+
+# or use prog.py from the 'megaTinyCore' package
+# subprocess.call(
+#     [
+#         "python3",
+#         "-u",
+#         progpy,
+#         "-t",
+#         "uart",
+#         "-u",
+#         serialPort,
+#         "-b",
+#         "57600",
+#         "-d",
+#         DEVICE,
+#         "-f",
+#         hex_file,
+#         "-a",
+#         "write",
+#         "-v",
+#     ]
+# )
