@@ -12,3 +12,6 @@ Filename includes module name, target processor and version.
 - 2024/03/24 - Added hacky script to program UPDI devices.
   - Usage: "python3 prog.py <hex-name> <serial-port>" where hex name is one of the files in this directory and serial port is where your updi-programmer is attached. Only 'tested' on MacOS.
   - Needs the arduino 'MegaTinyCore' package installed.
+- 2024/03/25 - added wrapper shell script which sorts out paths to the megaTinyCore package and its embedded python installation. An attempt to be cross-platform
+  - Usage : `./progUpdi.sh <Arduino package directory> <serial port> <hex file>`
+    - e.g. (on MacOS) `./progUpdi.sh ~/Library/Arduino15 /dev/cu.usbserial-21130 mdiv_ATtiny412_v1.1.0.hex`
