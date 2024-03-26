@@ -15,3 +15,4 @@ Filename includes module name, target processor and version.
 - 2024/03/25 - added wrapper shell script which sorts out paths to the megaTinyCore package and its embedded python installation. An attempt to be cross-platform
   - Usage : `./progUpdi.sh <Arduino package directory> <serial port> <hex file>`
     - e.g. (on MacOS) `./progUpdi.sh ~/Library/Arduino15 /dev/cu.usbserial-21130 mdiv_ATtiny412_v1.1.0.hex`
+- 2024/03/26 - Version 1.2.0 of mdiv — improved system-exclusive handling and other small improvements
