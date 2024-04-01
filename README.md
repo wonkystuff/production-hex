@@ -16,3 +16,20 @@ Filename includes module name, target processor and version.
   - Usage : `./progUpdi.sh <Arduino package directory> <serial port> <hex file>`
     - e.g. (on MacOS) `./progUpdi.sh ~/Library/Arduino15 /dev/cu.usbserial-21130 mdiv_ATtiny412_v1.1.0.hex`
 - 2024/03/26 - Version 1.2.0 of mdiv — improved system-exclusive handling and other small improvements
+- 2024/04/01 - Big update to mco/1 firmware:
+  - Preset waveforms added - 32 combinations mapped across the 128 program numbers
+  - Velocity-sensitivity added - output amplitude can be affected by note-on velocity, depending upon sensitivity setting
+  - MIDI CC implementation improved in line with implementation proposal by S. Luke, myself and Mathias Brüssel
+    - CC 4  - Sawtooth amplitude;
+    - CC 5  - Square/pulse amplitude;
+    - CC 65 - Pulse width;
+    - CC 66 - PWM amount;
+    - CC 67 - Sub oscillator amplitude;
+    - CC 69 - Noise amplitude;
+    - CC 37 - LFO rate;
+    - CC 36 - Velocity sensitivity
+  - Legato CC implemented - normal mode retriggers GATE for each new note, Legato mode does not
+  - Mod wheel adds pitch modulation from LFO
+  - Last selected preset and Legato-state are preserved across power cycles (automatically saved 8 seconds after the last update)
+  - Increased base sample rate to 60kHz from 40kHz to reduce some aliasing (oscillators still create aliasing)
+  - Miscellaneous code tidying
