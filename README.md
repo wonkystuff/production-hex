@@ -4,6 +4,12 @@ Public repo for hex firmware files used in non open-source wonkystuff modules. T
 
 Filename includes module name, target processor and version.
 
+Revised programming instructions (assumes that you have access to programming hardware — sorry!)
+
+1. Download avrdude for your computer from the [avrdude GitHub](https://github.com/avrdudes/avrdude)
+1. Download the firmware from here (or the whole archive) as needed
+1. Attach the module to the programming hardware - pu
+
 - 2023/12/10 - Initial commit of all MIDI hex files
 - 2023/12/10 - Corrected MIDI-CV mode on mcc/4 (v1.1.1)
 - 2023/12/11 - Added ATTiny85 and ATTiny25-based firmware
@@ -33,3 +39,7 @@ Filename includes module name, target processor and version.
   - Last selected preset and Legato-state are preserved across power cycles (automatically saved 8 seconds after the last update)
   - Increased base sample rate to 60kHz from 40kHz to reduce some aliasing (oscillators still create aliasing)
   - Miscellaneous code tidying
+- 2024/10/19 - Addition of mco-1b; drumplayer (aka 'playa' module) hex files; update of other MIDI code to use new MIDI library
+- 2025/09/11 - multiple updates:
+  - Updated mco* hex files as they have been reported as not working correctly (sorry about that).
+  - Added hex files for pa/4, env4 and umdx modules
