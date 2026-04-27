@@ -43,5 +43,5 @@ Revised programming instructions (assumes that you have access to programming ha
 - 2025/09/11 - multiple updates:
   - Updated mco* hex files as they have been reported as not working correctly (sorry about that).
   - Added hex files for pa/4, env4 and umdx modules
-- 2026/04/27 - Updated mcc/4 firmware:
+- 2026/04/27 - Updated mcc/4 firmware (mcc-4_ATtiny412_v2.1.0.hex):
   -  'MIDI-CV' mode now supports legato. Default is that the gate signal drops for 5ms on each new note. MIDI CC 68 is used to enable/disable this.
