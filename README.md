@@ -8,7 +8,8 @@ Revised programming instructions (assumes that you have access to programming ha
 
 1. Download avrdude for your computer from the [avrdude GitHub](https://github.com/avrdudes/avrdude)
 1. Download the firmware from here (or the whole archive) as needed
-1. Attach the module to the programming hardware - pu
+1. Attach the module to the programming hardware - updi or icsp as appropriate
+1. Run `progupdi.sh` with the firmware file as necessary
 
 - 2023/12/10 - Initial commit of all MIDI hex files
 - 2023/12/10 - Corrected MIDI-CV mode on mcc/4 (v1.1.1)
